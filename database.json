@@ -1,0 +1,91 @@
+{
+  "groups": {
+    "120363425958564298@g.us": {
+      "ranks": {},
+      "joinDates": {
+        "[object Object]": 1785630158515
+      },
+      "messageCount": {
+        "181411181023318@lid": 14,
+        "194090259980355@lid": 24,
+        "268801232912412@lid": 30,
+        "17459897696285@lid": 12,
+        "48675552292977@lid": 17,
+        "13387513741372@lid": 31,
+        "127479545126997@lid": 1,
+        "125155967795292@lid": 1,
+        "107138328342667@lid": 1,
+        "28497879822410@lid": 2
+      },
+      "totalMessagesToday": 133,
+      "protection": {
+        "antilink": false,
+        "contentFilter": false
+      },
+      "welcomeEnabled": true,
+      "locked": false,
+      "leavers": []
+    },
+    "120363424844000083@g.us": {
+      "ranks": {},
+      "joinDates": {
+        "[object Object]": 1785619797997
+      },
+      "messageCount": {
+        "173805045563516@lid": 1,
+        "77696780484630@lid": 53,
+        "24263092383745@lid": 128,
+        "224176522665993@lid": 102,
+        "222896387530770@lid": 37,
+        "224713209081990@lid": 4,
+        "218846485020780@lid": 26,
+        "25216273096780@lid": 1,
+        "206124540244193@lid": 78,
+        "201353150357617@lid": 7,
+        "14255785037840@lid": 3,
+        "272605886033991@lid": 2,
+        "185315608281092@lid": 2,
+        "9866278092906@lid": 4,
+        "11326667657383@lid": 5,
+        "62170305933501@lid": 3,
+        "72477589946412@lid": 19
+      },
+      "totalMessagesToday": 475,
+      "protection": {
+        "antilink": false,
+        "contentFilter": false
+      },
+      "welcomeEnabled": true,
+      "locked": false,
+      "leavers": []
+    },
+    "120363425012713343@g.us": {
+      "ranks": {},
+      "joinDates": {
+        "[object Object]": 1785618499328
+      },
+      "messageCount": {},
+      "totalMessagesToday": 0,
+      "protection": {
+        "antilink": false,
+        "contentFilter": false
+      },
+      "welcomeEnabled": true,
+      "locked": false
+    },
+    "120363429192901737@g.us": {
+      "ranks": {},
+      "joinDates": {},
+      "messageCount": {},
+      "totalMessagesToday": 0,
+      "protection": {
+        "antilink": false,
+        "contentFilter": false
+      },
+      "welcomeEnabled": true,
+      "locked": false
+    }
+  },
+  "lastResetDate": "2026-8-2",
+  "targetGroupId": "120363424844000083@g.us"
+}

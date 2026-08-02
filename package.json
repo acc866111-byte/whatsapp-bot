@@ -1,0 +1,14 @@
+{
+  "name": "whatsapp-bot-v2",
+  "version": "1.0.0",
+  "description": "بوت واتساب احترافي لمجموعة الأنمي",
+  "main": "index.js",
+  "dependencies": {
+    "@whiskeysockets/baileys": "^7.0.0-rc14",
+    "@hapi/boom": "^10.0.1",
+    "pino": "^9.0.0",
+    "qrcode-terminal": "^0.12.0",
+    "yt-search": "^2.10.4",
+    "@distube/ytdl-core": "^4.14.4"
+  }
+}
