@@ -13,6 +13,7 @@ const {
 } = require('@whiskeysockets/baileys');
 const { Boom } = require('@hapi/boom');
 const qrcode = require('qrcode-terminal');
+const QRCode = require('qrcode'); // لتوليد QR كملف صورة (احتياطي لو النص ما يظهر صح باللوحات)
 const pino = require('pino');
 const fs = require('fs');
 const path = require('path');
@@ -1130,7 +1131,20 @@ async function startBot() {
 
   sock.ev.on('connection.update', (update) => {
     const { connection, lastDisconnect, qr } = update;
-    if (qr) qrcode.generate(qr, { small: true });
+    if (qr) {
+      qrcode.generate(qr, { small: true });
+      console.log('📋 كود QR الخام (يمكن تحويله لصورة بأي موقع QR generator):');
+      console.log(qr);
+      // نحفظ QR كصورة PNG بمجلد المشروع، تقدر تفتحها من تبويب Files بلوحة الاستضافة
+      const qrPath = path.join(__dirname, 'qrcode.png');
+      QRCode.toFile(qrPath, qr, { width: 400 }, (err) => {
+        if (err) {
+          console.log('❌ فشل حفظ صورة QR:', err);
+        } else {
+          console.log('✅ تم حفظ صورة QR بملف: qrcode.png (افتحه من تبويب Files وحمّله وامسحه)');
+        }
+      });
+    }
 
     if (connection === 'close') {
       const statusCode = new Boom(lastDisconnect?.error)?.output?.statusCode;
