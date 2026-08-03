@@ -1129,9 +1129,29 @@ async function startBot() {
     printQRInTerminal: false,
   });
 
+  // ==== ربط الجلسة برمز الاقتران (Pairing Code) بدل QR ====
+  // لتفعيله: أضف متغير بيئة PHONE_NUMBER بلوحة الاستضافة (تبويب Env)
+  // بصيغة دولية بدون + أو مسافات، مثال: 212726590815
+  if (!sock.authState.creds.registered && process.env.PHONE_NUMBER) {
+    setTimeout(async () => {
+      try {
+        const code = await sock.requestPairingCode(process.env.PHONE_NUMBER.trim());
+        console.log('═══════════════════════════════');
+        console.log('🔑 رمز الاقتران الخاص بك:', code);
+        console.log('افتح واتساب → الأجهزة المرتبطة → ربط جهاز → ربط برقم الهاتف بدلاً من ذلك');
+        console.log('وأدخل هذا الرمز:', code);
+        console.log('═══════════════════════════════');
+      } catch (err) {
+        console.log('❌ فشل طلب رمز الاقتران:', err.message || err);
+      }
+    }, 3000);
+  }
+
   sock.ev.on('connection.update', (update) => {
     const { connection, lastDisconnect, qr } = update;
-    if (qr) {
+
+    // لو ما في PHONE_NUMBER محدد، نرجع لطريقة QR التقليدية كاحتياط
+    if (qr && !process.env.PHONE_NUMBER) {
       qrcode.generate(qr, { small: true });
       console.log('📋 كود QR الخام (يمكن تحويله لصورة بأي موقع QR generator):');
       console.log(qr);
